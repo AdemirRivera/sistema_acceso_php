@@ -9,12 +9,12 @@ nav{
   justify-content: space-around;
   align-items: center;
   min-height: 8vh;
-  background-color: #5D4954;
+  background-color: #fff;
   font-family: 'Poppins', sans-serif;
 }
 
 .logo{
-  color: rgb(226,226,226);
+  color: #355c7d;
   text-transform: uppercase;
   letter-spacing: 5px;
   font-size: 20px;
@@ -31,11 +31,25 @@ nav{
 }
 
 .nav-links a{
-  color: rgb(226,226,226);
+  color: #355c7d;
   text-decoration: none;
   letter-spacing: 3px;
   font-weight: bold;
   font-size: 14px;
+}
+
+.cool-link::after{
+  content: '';
+  display: block;
+  width: 0;
+  height: 2px;
+  background: #355c7d;
+  transition: width .3s;
+}
+
+.cool-link:hover::after{
+  width: 100%;
+  transition: width .3s;
 }
 
 .burger{
@@ -46,7 +60,7 @@ nav{
 .burger div{
   width: 25px;
   height: 3px;
-  background-color:rgb(226,226,226);
+  background-color:#355c7d;
   margin: 5px;
   transition: all 0.3s ease;
 }
@@ -66,7 +80,7 @@ nav{
    right: 0px;
    height: 92vh;
    top: 8vh;
-   background-color: #5D4954;
+   background-color: #f4f4f4;
    display: flex;
    flex-direction: column;
    align-items: center;
