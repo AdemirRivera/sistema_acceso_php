@@ -9,7 +9,7 @@
 session_start();
 
 if(isset($_SESSION['loggedin']) && $_SESSION['loggedin'] === true){
-    header('location: html/inicio.html');
+    header('location: principal/inicio.php');
     exit;
 }
 
@@ -62,7 +62,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
                         $_SESSION['ID_USUARIO'] = $id;
                         $_SESSION['NOMBRE_USUARIO'] = $username;
 
-                        header('location: html/inicio.html');
+                        header('location: principal/inicio.php');
                 }else{
                     $pass_err = 'La contraseña ingresada no es valida';
                 }
