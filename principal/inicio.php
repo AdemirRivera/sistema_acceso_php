@@ -30,17 +30,28 @@ if(!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== TRUE){
     <center class="center1">
      <h1>Sistema de Acceso</h1>
      <h2>Iniciar Sistema</h2>
-     <a href="#" class="bto">Ingresar</a><center>
-    <div class="capa"></div>
+     <a href="#" class="bto">Ingresar</a></center>
   </section>
   <section>
-
+   <center class="center2">
+   <h1>Ultimos Registros de Ingreso</h1>
+   <hr>
+   </center>
   </section>
   <section class="parallax">
-
+   <center class="center2">
+  <h2>Ultimos Usuarios que Ingresaron</h2>
+  <hr id="hrp">
+   </center>
   </section>
   <section>
-
+  <div class="app">
+   <h1>No te olvides de usar la App</h1>
+ </div>
+   <div class="app2">
+    <img src="../resources/images/tele.png" alt="" class="img1">
+    <img src="" alt="">
+  </div>
   </section>
 
   <script type="text/javascript" src="../js/main.js"></script>

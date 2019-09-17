@@ -43,13 +43,58 @@ color: #fff;
   padding: 10px;
 }
 
+.center2{
+padding: 5%;
+color: #355c7d;
+}
+
+.center2 h1{
+  font-size: 40px;
+}
+
+.center2 h2{
+  font-size: 40px;
+  color: #fff;
+}
+
+hr{
+  width: 50%;
+  border-width: 3px;
+  border-style: solid;
+}
+
+#hrp{
+  color: #fff;
+}
+
+.app {
+    float: left;
+  	width: 50%;
+}
+
+.app h1{
+  margin: 20%;
+  font-size: 100px;
+}
+
+.app2 {
+  float: left;
+  width: 50%;
+}
+
+.img1 {
+  margin-top: 10px;
+  height: 900px;
+}
+
+
 section:nth-child(2){
   background-image: url(../resources/images/portada.jpg);
   background-size: cover;
 }
 
 section:nth-child(3){
-  background: #f7f7f7;
+  background: #f4f4f4;
 }
 
 section:nth-child(4){
