@@ -12,11 +12,20 @@ nav{
   font-family: 'Poppins', sans-serif;
 }
 
+.perlo{
+  width: 50px;
+}
+
+.perlo2{
+display: none;
+}
+
 .logo{
   color: #355c7d;
   text-transform: uppercase;
   letter-spacing: 5px;
   font-size: 20px;
+  margin-left: 20px;
 }
 
 .nav-links{
@@ -79,6 +88,14 @@ nav{
 @media screen and (max-width:768px) {
   body{
   overflow-x: hidden;
+  }
+
+  .perlo{
+    display: none;
+  }
+
+  .perlo2{
+  display: inherit;
   }
 
   .nav-links{

@@ -4,12 +4,6 @@ section{
   height: 100vh;
 }
 
-.close{
-	  width: 30px;
-    height: 30px;
-    margin-right: 15px;
-}
-
 .bto{
   background-color: #355c7d;
   text-decoration: none;
@@ -34,7 +28,7 @@ color: #fff;
 }
 
 .center1 h2 {
-  font-size: 60px;
+  font-size: 100px;
   font-weight: 100;
   padding: 20px;
 }
@@ -72,14 +66,27 @@ hr{
   	width: 50%;
 }
 
+.appt{
+  padding: 10%;
+  float: left;
+  width: 33.33%;
+}
+
+.appt h1{
+  font-size: 80px;
+}
+
+.appt h3{
+  font-size: 30px;
+}
+
+.appt img{
+  width: 300px;
+}
+
 .app h1{
   margin: 20%;
   font-size: 100px;
-}
-
-.app2 {
-  float: left;
-  width: 50%;
 }
 
 .img1 {
@@ -98,10 +105,111 @@ section:nth-child(3){
 }
 
 section:nth-child(4){
-  height: 900px;
+  height: 1000px;
   background-image: url(../resources/images/div.jpg);
   background-size: cover;
 }
 section:nth-child(5){
 background-color: #fff;
 }
+
+@media screen and (max-width:1024px) {
+  .app h1{
+     font-size: 35px;
+    }
+
+    .appt{
+      padding-top: 30%;
+    }
+
+    .appt h1{
+      font-size: 40px;
+    }
+
+    .appt h3{
+      font-size: 25px;
+    }
+
+    .appt img{
+      width: 130px;
+    }
+    .img1{
+      height: 200px;
+      display: block;
+      margin: auto;
+    }
+
+    .center1 h2 {
+      font-size: 80px;
+      font-weight: 100;
+      padding: 20px;
+    }
+
+
+    .center2 h2 {
+    font-size: 35px;
+    padding-bottom: 2px;
+    }
+
+    hr {
+      width: 75%;
+      border-width: 1.5px;
+    }
+
+}
+
+@media screen and (max-width:768px) {
+
+  .app{
+  float: inherit;
+  width: inherit;
+  }
+
+  .app h1{
+   font-size: 35px;
+  }
+
+  .img1{
+    height: 200px;
+    display: block;
+    margin: auto;
+  }
+
+  .center1 h2 {
+    font-size: 50px;
+    font-weight: 100;
+    padding: 20px;
+  }
+
+  .center2 h1 {
+    font-size: 20px;
+    padding-bottom: 2px;
+  }
+
+  .center2 h2 {
+  font-size: 20px;
+  padding-bottom: 2px;
+  }
+
+  hr {
+    width: 75%;
+    border-width: 1.5px;
+  }
+
+  .appt{
+    padding: 10%;
+    float: inherit;
+    width: inherit;
+  }
+
+  .appt h1{
+    font-size: 40px;
+  }
+
+  .appt h3{
+    font-size: 20px;
+  }
+
+  .appt img{
+    width: 130px;
+  }
