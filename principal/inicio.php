@@ -78,6 +78,26 @@ if(!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== TRUE){
  </div>
    <div class="app">
     <img src="../resources/images/tele.png" alt="" class="img1">
+    <style>
+    .apt{
+      background: linear-gradient(90deg, #9C5BC8, #65CCC9);
+      display: inline-block;
+      border-radius: 25px;
+      width: 140px;
+      height: 140px;
+    }
+
+    .apt img {
+      width: 100px;
+      padding-top: 10px;
+      margin-left: 15px;
+      padding-bottom: 10px;
+      margin-right: 10px;
+    }
+    </style>
+    <div class="apt">
+      <img src="../resources/icons/logo2.png" alt="">
+    </div>
     <img src="" alt="">
   </div>
   </section>
