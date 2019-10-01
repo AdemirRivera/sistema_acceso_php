@@ -9,26 +9,26 @@
 <hr>
 <li class="type"><h4>MENU<h4></li>
     <li class="item" id='profile'>
-      <a href="#profile" class="btn"><i class="far fa-user"></i>Usuarios</a>
+      <a href="#profile" class="btn">Usuarios</a>
       <div class="smenu">
-        <a href="#">Registrar</a>
-        <a href="#">Lista</a>
+        <a href="usuarios.php">Lista de Usuario</a>
+        <a href="reguser.php">Registrar Usuario</a>
       </div>
     </li>
 
     <li class="item" id="messages">
-      <a href="#messages" class="btn"><i class="far fa-envelope"></i>Personal</a>
+      <a href="#messages" class="btn">Personal</a>
       <div class="smenu">
-        <a href="#">Registrar</a>
-        <a href="#">Lista</a>
+        <a href="#">Lista de Personal</a>
+        <a href="#">Registrar Personal</a>
       </div>
     </li>
 
     <li class="item">
-      <a class="btn" href="#"><i class="fas fa-sign-out-alt"></i>Ingresos</a>
+      <a class="btn" href="#">Ingresos</a>
     </li>
     <li class="item">
-      <a class="btn" href="#"><i class="fas fa-sign-out-alt"></i>Salir</a>
+      <a class="btn" href="inicio.php">Salir</a>
     </li>
 
 </aside>

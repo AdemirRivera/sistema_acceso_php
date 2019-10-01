@@ -1,0 +1,85 @@
+
+#container{
+  font-size: 20px;
+margin: 0px 100px;
+padding-top:120px;
+}
+
+.btn_new{
+  display: inline-block;
+  background: #239baa;
+  color: white;
+  padding: 5px 25px;
+  border-radius: 4px;
+  margin: 20px;
+}
+
+table{
+  border-collapse: collapse;
+  font-size: 12pt;
+  width: 100%;
+  border: #c3c3c3 1px solid;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+table th{
+  text-align: center;
+  padding: 10px;
+  background: #3d7ba8;
+  color: #fff;
+}
+
+table tr:nth-child(odd){
+  background-color: #fff;
+}
+
+table td{
+  text-align: center;
+  padding: 20px;
+}
+
+.link_edit{
+  color: #fff;
+  background-color: #0ca4ce;
+  padding: 10px 20px;
+  text-decoration: none;
+}
+
+.link_delete{
+  margin-left: 10px;
+  color: #fff;
+  background-color: #f26b6b;
+  padding: 10px 10px;
+  text-decoration: none;
+}
+
+.paginador ul{
+  padding: 15px;
+  list-style: none;
+  background: #f4f4f4;
+  margin-top: 15px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.paginador a, .pageSelected{
+  color: #428bca;
+  border: 1px solid #ddd;
+  padding: 5px;
+  display: inline-block;
+  font-size: 14px;
+  text-align: center;
+  width: 35px;
+  text-decoration: none;
+  background-color: #fff;
+}
+
+.paginador a:hover {
+  background: #ddd;
+}
+
+.pageSelected{
+  color: #fff;
+  background-color: #428bca;
+  border: 1px solid #438bca;
+}
