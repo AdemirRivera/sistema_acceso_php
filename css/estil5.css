@@ -1,0 +1,33 @@
+*{
+  font-family: Poppins,sans-serif;
+}
+
+.burger {
+  position: absolute;
+      left: 30px;
+      top: 20px;
+      cursor: pointer;
+  }
+
+.data_delete {
+  margin-top: 80px;
+}
+
+.cancel {
+  color: #fff;
+    background-color: #0cce44;
+    padding: 10px 20px;
+    text-decoration: none;
+    margin-right: 10px;
+}
+
+input[type="submit"] {
+    width: 113.92px;
+    height: 43px;
+    color: white;
+    border: 0px;
+    background: #f26b6b;
+    cursor: pointer;
+    margin-left: 10px;
+    font-size: 16px;
+}

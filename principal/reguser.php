@@ -19,12 +19,13 @@
           ?>
 
     <section id="container">
+      <center>
               <div class="form_register">
   		<h1>Registro de Usuarios</h1>
                   <hr>
                   <div class="alert"><?php echo isset($alert) ? $alert: ''; ?></div>
                   <form action="" method="post">
-                          <img src="../images/user.png" alt="" class="logo">
+                          <img src="../resources/icons/users.png" alt="" class="logoy">
                           <label for="nombre">Nombre</label>
                           <input type="text" name="nombre" id="nombre" placeholder="Nombre Completo">
                           <label for="clave">Contraseña</label>
@@ -54,6 +55,7 @@
                           <input type="submit" value="Registrar" class="btn_save">
                       </form>
                   </div>
+                </center>
   	</section>
     <script type="text/javascript" src="../js/trast.js"></script>
 

@@ -2,7 +2,7 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-        <link rel="stylesheet" href="../css/estil3.css">
+        <link rel="stylesheet" href="../css/estil5.css">
     <link href="https://fonts.googleapis.com/css?family=Poppins&display=swap" rel="stylesheet">
     <title></title>
   </head>
@@ -18,6 +18,7 @@
           </div>
           </aside>
     <section id="container">
+      <center>
               <div class="data_delete">
                   <h2>¿Esta seguro de eliminar el siguiente registro?</h2>
                   <p class="for">Usuario: <span id="tre"><?php echo $nombre ?></span></p>
@@ -29,7 +30,7 @@
                       <input type="submit" value="Aceptar">
                   </form>
               </div>
-
+</center>
     </section>
   </body>
 </html>

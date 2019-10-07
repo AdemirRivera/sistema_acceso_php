@@ -2,6 +2,7 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
+    <link rel="stylesheet" href="../css/estil4.css">
     <link rel="stylesheet" href="../css/estil3.css">
     <link href="https://fonts.googleapis.com/css?family=Poppins&display=swap" rel="stylesheet">
     <title></title>
@@ -21,13 +22,14 @@
           </div>
           </aside>
 
-  	<section id="container">
+  	<section id="container" style="padding-top: 80px;">
+      <center>
               <div class="form_register">
   		<h1>Actualizacion de Usuario</h1>
                   <hr>
                   <div class="alert"><?php echo isset($alert) ? $alert: ''; ?></div>
                   <form action="" method="post">
-                          <img src="../images/user.png" alt="" class="logo">
+                          <img src="../resources/icons/user.png" alt="" class="logoy">
                           <input name="idusuario" value="<?php echo $iduser ?>" type="hidden">
                           <label for="nombre">Nombre</label>
                           <input type="text" name="nombre" id="nombre" placeholder="Nombre Completo" value="<?php echo $nombre ?>">
@@ -57,6 +59,7 @@
                           <input type="submit" value="Actualizar" class="btn_save">
                       </form>
                   </div>
+                </center>
   	</section>
   </body>
 </html>
