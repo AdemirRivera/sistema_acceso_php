@@ -13,7 +13,7 @@ if(!empty($_POST))
     $iduser = $_POST['idusuario'];
     $nombre = $_POST['nombre'];
     $rol = $_POST['rol'];
-    $clave = password_hash($_POST['clave'], PASSWORD_BCRYPT);
+    $clave = password_hash($_POST['clave'], PASSWORD_DEFAULT);
 
 
     $query= mysqli_query($conection,"SELECT * FROM usuario WHERE (NOMBRE_USUARIO = '$nombre' AND ID_USUARIO = !'$iduser')");

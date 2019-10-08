@@ -9,7 +9,7 @@ include 'php/codlogin.php';
         <meta charset="UTF-8">
         <title>Login</title>
         <link rel="stylesheet" type="text/css" href="css/estil.css">
-
+        <link href="https://fonts.googleapis.com/css?family=Poppins&display=swap" rel="stylesheet">
         <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale, maximum-scale=1.0, minimum-scale=1.0">
     </head>
 

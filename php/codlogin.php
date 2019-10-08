@@ -52,7 +52,6 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
 
             if(mysqli_stmt_num_rows($stmt) == 1){
                 mysqli_stmt_bind_result($stmt, $id, $username, $hashed_pass);
-
                 if(mysqli_stmt_fetch($stmt)){
                     if(password_verify($pass, $hashed_pass)){
                         session_start();

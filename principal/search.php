@@ -17,13 +17,13 @@ include '../includes/sidebar.php';
 
  <?php
  $busqueda =  strtolower($_REQUEST['busqueda']);
- // if (empty($busqueda)) {
- //   // code...
- //   header("location: usuarios.php");
- // }
+ if (empty($busqueda)) {
+   // code...
+   header("location: usuarios.php");
+ }
  ?>
 
- <form class="buscar-caja" href="search.php" method="get">
+ <form class="buscar-caja" action="search.php" method="get">
 <input type="text" name="busqueda" id="busqueda" class="buscar-txt" placeholder="Buscar..." value=" <?php echo $busqueda;  ?> ">
 <input class="buscar-btn" type="submit" value="Buscar">
 </input>
@@ -36,8 +36,8 @@ include '../includes/sidebar.php';
     <table>
     <tr>
       <th>ID</th>
-      <th>NOMBRE_USUARIO</th>
-      <th>TIPO_USUARIO_USUARIO</th>
+      <th>Usuario</th>
+      <th>Tipo de Usuario</th>
       <th>Acciones</th>
     </tr>
 
@@ -75,12 +75,12 @@ if(empty($_GET['pagina']))
 $desde = ($pagina-1) * $por_pagina;
 $total_paginas = ceil($total_registro / $por_pagina);
 
-  $query = mysqli_query($conection, 'SELECT u.ID_USUARIO, u.NOMBRE_USUARIO, t.TIPO_USUARIO FROM usuario u INNER JOIN tipo_usuario t ON u.ID_TIPO_USUARIO_USUARIO = t.ID_TIPO_USUARIO
+  $query = mysqli_query($conection, "SELECT u.ID_USUARIO, u.NOMBRE_USUARIO, t.TIPO_USUARIO FROM usuario u INNER JOIN tipo_usuario t ON u.ID_TIPO_USUARIO_USUARIO = t.ID_TIPO_USUARIO
     WHERE
     ( u.ID_USUARIO LIKE '%$busqueda%' OR
       u.NOMBRE_USUARIO LIKE '%$busqueda%' OR
       t.TIPO_USUARIO LIKE '%$busqueda%')
-  AND estatus = 1 ORDER BY ID_USUARIO ASC LIMIT $desde,$por_pagina;');
+  AND estatus = 1 ORDER BY ID_USUARIO ASC LIMIT $desde,$por_pagina;");
 
   $result = mysqli_num_rows($query);
   if ($result > 0) {

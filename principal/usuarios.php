@@ -13,7 +13,7 @@
 include '../includes/header.php';
 include '../includes/sidebar.php';
  ?>
- <form class="buscar-caja" href="search.php" method="get">
+ <form class="buscar-caja" action="search.php" method="get">
 <input type="text" name="busqueda" id="busqueda" class="buscar-txt" placeholder="Buscar...">
 <input class="buscar-btn" type="submit" value="">
 </input>
@@ -25,8 +25,8 @@ include '../includes/sidebar.php';
     <table>
     <tr>
       <th>ID</th>
-      <th>NOMBRE_USUARIO</th>
-      <th>TIPO_USUARIO_USUARIO</th>
+      <th>Nombre de Usuario</th>
+      <th>Tipo de Usuario</th>
       <th>Acciones</th>
     </tr>
     <?php

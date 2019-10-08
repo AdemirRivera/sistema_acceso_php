@@ -15,7 +15,7 @@ if(!empty($_POST))
     if(strlen(trim($_POST['clave'])) < 4){
         $alert ='<p class="msg_error">La contraseña debe tener mas de 4 caracteres</p>' ;
     }else{
-         $clave = password_hash($_POST['clave'], PASSWORD_BCRYPT);
+         $clave = password_hash($_POST['clave'], PASSWORD_DEFAULT);
 
     $query= mysqli_query($conection,"SELECT * FROM usuario WHERE NOMBRE_USUARIO = '$nombre'");
         $result = mysqli_fetch_array($query);

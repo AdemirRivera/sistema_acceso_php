@@ -9,14 +9,6 @@
  margin-top: 200px;
 }
 
-
-.buscar-caja:hover > .buscar-txt {
- width: 240px;
- padding: 0 6px;
-}
-
-
-
 .buscar-btn {
  float: right;
  width: 40px;
@@ -41,6 +33,6 @@
  font-size: 16px;
  transition: 0.4s;
  line-height: 40px;
- width: 0px;
+ width: 240px;
  font-weight: bold;
 }
