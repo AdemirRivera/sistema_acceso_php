@@ -19,8 +19,8 @@
     <li class="item" id="messages">
       <a href="#messages" class="btn">Personal</a>
       <div class="smenu">
-        <a href="#">Lista de Personal</a>
-        <a href="#">Registrar Personal</a>
+        <a href="personal.php">Lista de Personal</a>
+        <a href="regpersonal.php">Registrar Personal</a>
       </div>
     </li>
 

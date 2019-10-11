@@ -14,7 +14,7 @@
           ?>
           <aside id="sidebar">
           <div class="burger">
-          <a href="usuarios.php"><img src="../resources/icons/left-arro.png" alt="" style="width: 35px;"></a>
+          <a href="../principal/usuarios.php"><img src="../resources/icons/left-arro.png" alt="" style="width: 35px;"></a>
           </div>
           </aside>
     <section id="container">
@@ -26,7 +26,7 @@
 
                   <form method="post" action="">
                       <input name="idusuario" value="<?php echo $iduser ?>" type="hidden">
-                      <a href="usuarios.php" class="cancel">Cancelar</a>
+                      <a href="../principal/usuarios.php" class="cancel">Cancelar</a>
                       <input type="submit" value="Aceptar">
                   </form>
               </div>

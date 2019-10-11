@@ -19,14 +19,17 @@ include '../includes/sidebar.php';
 </input>
 </form>
     <section id='container'>
-     <h1>Lista de usuarios</h1>
+     <h1>Lista de Personal</h1>
 
-    <a href="../process/reguser.php" class="btn_new">Crear usuario</a>
+    <a href="../process/regpersonal.php" class="btn_new">Crear empleado</a>
     <table>
     <tr>
       <th>ID</th>
-      <th>Nombre de Usuario</th>
-      <th>Tipo de Usuario</th>
+      <th>Nombre</th>
+      <th>Apellido</th>
+      <th>Numero de Identidad</th>
+      <th>Telefono</th>
+      <th>Usuario</th>
       <th>Acciones</th>
     </tr>
     <?php
@@ -48,7 +51,7 @@ if(empty($_GET['pagina']))
 $desde = ($pagina-1) * $por_pagina;
 $total_paginas = ceil($total_registro / $por_pagina);
 
-  $query = mysqli_query($conection, 'SELECT u.ID_USUARIO, u.NOMBRE_USUARIO, t.TIPO_USUARIO FROM usuario u INNER JOIN tipo_usuario t ON u.ID_TIPO_USUARIO_USUARIO = t.ID_TIPO_USUARIO WHERE estatus = 1 ORDER BY ID_USUARIO ASC LIMIT 0,5');
+  $query = mysqli_query($conection, 'SELECT p.ID_PERSONAL, p.NOMBRE_PERSONAL, p.APELLIDOS_PERSONAL, p.NUMERO_IDENTIDAD_PERSONAL, p.TELEFONO_PERSONAL, u.NOMBRE_USUARIO FROM personal p INNER JOIN usuario u ON p.ID_USUARIO_PERSONAL = u.ID_USUARIO WHERE p.estatus = 1 ORDER BY ID_PERSONAL ASC LIMIT 0,5');
 
   $result = mysqli_num_rows($query);
   if ($result > 0) {
@@ -58,12 +61,15 @@ $total_paginas = ceil($total_registro / $por_pagina);
 
   ?>
   <tr>
-    <td><?php echo $data['ID_USUARIO']; ?></td>
+    <td><?php echo $data['ID_PERSONAL']; ?></td>
+    <td><?php echo $data['NOMBRE_PERSONAL']; ?></td>
+    <td><?php echo $data['APELLIDOS_PERSONAL']; ?></td>
+    <td><?php echo $data['NUMERO_IDENTIDAD_PERSONAL']; ?></td>
+    <td><?php echo $data['TELEFONO_PERSONAL']; ?></td>
     <td><?php echo $data['NOMBRE_USUARIO']; ?></td>
-    <td><?php echo $data['TIPO_USUARIO']; ?></td>
     <td>
-        <a class="link_edit" href="../process/edituser.php?id=<?php echo $data['ID_USUARIO']; ?>">Editar</a>
-      <a class="link_delete" href="../process/deluser.php?id=<?php echo $data['ID_USUARIO']; ?>">Eliminar</a>
+        <a class="link_edit" href="../process/editpersonal.php?id=<?php echo $data['ID_PERSONAL']; ?>">Editar</a>
+      <a class="link_delete" href="../process/delpersonal.php?id=<?php echo $data['ID_PERSONAL']; ?>">Eliminar</a>
     </td>
   </tr>
   <?php
