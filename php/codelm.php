@@ -28,7 +28,7 @@ if(empty($_REQUEST['id'])){
 
     $iduser = $_REQUEST['id'];
 
-    $query = mysqli_query($conection, "SELECT u.NOMBRE_USUARIO, t.ID_TIPO_USUARIO FROM usuario u INNER JOIN tipo_usuario t ON u.ID_TIPO_USUARIO_USUARIO = t.ID_TIPO_USUARIO WHERE ID_USUARIO ='$iduser' ");
+    $query = mysqli_query($conection, "SELECT u.NOMBRE_USUARIO, t.TIPO_USUARIO FROM usuario u INNER JOIN tipo_usuario t ON u.ID_TIPO_USUARIO_USUARIO = t.ID_TIPO_USUARIO WHERE ID_USUARIO ='$iduser' ");
 
     $result = mysqli_num_rows($query);
 
@@ -37,7 +37,7 @@ if(empty($_REQUEST['id'])){
         while ($data = mysqli_fetch_array($query)){
 
             $nombre = $data['NOMBRE_USUARIO'];
-            $rol = $data['ID_TIPO_USUARIO'];
+            $rol = $data['TIPO_USUARIO'];
         }
     }  else {
             header('location: usuarios.php');

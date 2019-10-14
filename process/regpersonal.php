@@ -14,7 +14,7 @@
     include '../includes/sidebar.php';
      ?>
     <?php
-         include '../php/codregist.php';
+         include '../php/codregper.php';
          include '../php/conexion.php';
           ?>
 
@@ -28,24 +28,28 @@
                           <img src="../resources/icons/users.png" alt="" class="logoy">
                           <label for="nombre">Nombre</label>
                           <input type="text" name="nombre" id="nombre" placeholder="Nombre Completo">
-                          <label for="clave">Contraseña</label>
-                          <input type="password" name="clave" id="clave" placeholder="Contraseña de acceso">
-                          <label for="rol">Tipo de Usuario</label>
+                          <label for="apellido">Apellido</label>
+                          <input type="text" name="apellido" id="apellido" placeholder="Apellido Completo">
+                          <label for="ident">Numero de identidad</label>
+                          <input type="text" name="ident" id="ident" placeholder="DUI, NIT, etc">
+                          <label for="tel">Telefono</label>
+                          <input type="number" name="tel" id="tel" placeholder="Telefono">
+                          <label for="rol">Usuario</label>
 
                           <?php
 
-                          $query_rol = mysqli_query($conection, 'SELECT * FROM tipo_usuario');
-                          $result_rol = mysqli_num_rows($query_rol);
+                          $query_user = mysqli_query($conection, 'SELECT * FROM usuario');
+                          $result_user = mysqli_num_rows($query_user);
 
                           ?>
                           <select name="rol" id="rol">
-                              <option selected disabled>Seleccionar opcion</option>
+                              <option selected disabled>Seleccionar Usuario</option>
                               <?php
-                              if($result_rol > 0){
-                                  while ($rol = mysqli_fetch_array($query_rol)){
+                              if($result_user > 0){
+                                  while ($user = mysqli_fetch_array($query_user)){
 
                               ?>
-                              <option value="<?php echo $rol['ID_TIPO_USUARIO'] ?>"><?php echo $rol['TIPO_USUARIO'] ?></option>
+                              <option value="<?php echo $user['ID_USUARIO'] ?>"><?php echo $user['NOMBRE_USUARIO'] ?></option>
                             <?php
                                   }
                               }
