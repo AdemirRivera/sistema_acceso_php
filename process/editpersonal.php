@@ -43,7 +43,7 @@
 
               <?php
 
-              $query_rol = mysqli_query($conection, 'SELECT * FROM usuario');
+              $query_rol = mysqli_query($conection, 'SELECT * FROM usuario WHERE vacante = 0');
               $result_rol = mysqli_num_rows($query_rol);
 
               ?>

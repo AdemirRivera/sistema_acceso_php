@@ -38,13 +38,24 @@
 
                           <?php
 
-                          $query_user = mysqli_query($conection, 'SELECT * FROM usuario');
-                          $result_user = mysqli_num_rows($query_user);
+                          $query_user = mysqli_query($conection, 'SELECT * FROM usuario WHERE vacante = 0');
+                          $test = mysqli_fetch_array($query_user);
 
+                          if(empty ($test)){
+                            $memo ='<p class="msg_error">No existen Usuarios Vacantes.</p><br><p class="msg_error">Para poder Registrar un Nuevo Empleado Registre un nuevo Usuario.</p>';
+                         ?>
+
+                         <div class="alert"><?php echo $memo ?></div>
+
+                          <?php
+                          }else{
                           ?>
                           <select name="rol" id="rol">
                               <option selected disabled>Seleccionar Usuario</option>
                               <?php
+                              $query_user = mysqli_query($conection, 'SELECT * FROM usuario WHERE vacante = 0');
+                              $result_user = mysqli_num_rows($query_user);
+
                               if($result_user > 0){
                                   while ($user = mysqli_fetch_array($query_user)){
 
@@ -53,6 +64,8 @@
                             <?php
                                   }
                               }
+                            }
+
                               ?>
 
                           </select>
