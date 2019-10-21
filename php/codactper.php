@@ -51,7 +51,7 @@ if(empty($_GET['id'])){
 }
 $iduser = $_GET['id'];
 
-$sql = mysqli_query($conection, "SELECT p.ID_PERSONAL, p.NOMBRE_PERSONAL, p.APELLIDOS_PERSONAL, p.NUMERO_IDENTIDAD_PERSONAL, p.TELEFONO_PERSONAL, (p.ID_USUARIO_PERSONAL) as ID_USUARIO, (U.NOMBRE_USUARIO) as NOMBRE_USUARIO FROM personal p INNER JOIN usuario u ON p.ID_USUARIO_PERSONAL = u.ID_USUARIO WHERE ID_PERSONAL = '$iduser'");
+$sql = mysqli_query($conection, "SELECT p.ID_PERSONAL, p.NOMBRE_PERSONAL, p.APELLIDOS_PERSONAL, p.NUMERO_IDENTIDAD_PERSONAL, p.TELEFONO_PERSONAL, (p.ID_USUARIO_PERSONAL) as ID_USUARIO, (u.NOMBRE_USUARIO) as NOMBRE_USUARIO FROM personal p INNER JOIN usuario u ON p.ID_USUARIO_PERSONAL = u.ID_USUARIO WHERE ID_PERSONAL = '$iduser'");
 
 $result_sql = mysqli_num_rows($sql);
 
@@ -67,14 +67,22 @@ if($result_sql == 0){
       $ident = $data['NUMERO_IDENTIDAD_PERSONAL'];
       $rol = $data['ID_USUARIO_PERSONAL'];
 
-        // if($idrol == 1){
-        //     $option = '<option value='.$idrol.' selected>'.$rol.'</option>';
-        // }else if($idrol == 2){
+
+      $query = mysqli_query($conection, 'SELECT p.ID_PERSONAL, p.NOMBRE_PERSONAL, u.NOMBRE_USUARIO FROM personal p INNER JOIN usuario u ON p.ID_USUARIO_PERSONAL = u.ID_USUARIO');
+
+      $idopt = $data['ID_PERSONAL'];
+      $idoptuser = $data['ID_USUARIO'];
+
+     $option = '<option value='.$idoptuser.' selected>'.$rol.'</option>';
+
+
+        // else if($idrol == 2){
         //     $option = '<option value='.$idrol.' selected>'.$rol.'</option>';
         // }else if($idrol == 3){
         //     $option = '<option value='.$idrol.' selected>'.$rol.'</option>';
         // }else if($idrol == 4){
         //     $option = '<option value='.$idrol.' selected>'.$rol.'</option>';
         // }
+
     }
 }

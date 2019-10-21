@@ -19,11 +19,11 @@ include '../includes/sidebar.php';
  $busqueda =  strtolower($_REQUEST['busqueda']);
  if (empty($busqueda)) {
    // code...
-   header("location: usuarios.php");
+   header("location: ../principal/personal.php");
  }
  ?>
 
- <form class="buscar-caja" action="search.php" method="get">
+ <form class="buscar-caja" action="../process/searchp.php" method="get">
 <input type="text" name="busqueda" id="busqueda" class="buscar-txt" placeholder="Buscar..." value=" <?php echo $busqueda;  ?> ">
 <input class="buscar-btn" type="submit" value="Buscar">
 </input>
@@ -32,34 +32,40 @@ include '../includes/sidebar.php';
     <section id='container'>
      <h1>Lista de usuarios</h1>
 
-    <a href="reguser.php" class="btn_new">Crear usuario</a>
+    <a href="../process/regpersonal.php" class="btn_new">Crear usuario</a>
     <table>
     <tr>
       <th>ID</th>
+      <th>Nombre</th>
+      <th>Apellido</th>
+      <th>Numero de Identidad</th>
+      <th>Telefono</th>
       <th>Usuario</th>
-      <th>Tipo de Usuario</th>
       <th>Acciones</th>
     </tr>
 
     <?php
           require_once '../php/conexion.php';
 
-$rol = '';
-if ($busqueda == 'administrador') {
-  // code...
-  $rol = "OR ID_TIPO_USUARIO_USUARIO LIKE '%1%'";
-}else if ($busqueda == 'empleado') {
-  // code...
-  $rol = "OR ID_TIPO_USUARIO_USUARIO LIKE '%2%'";
-}else if ($busqueda == 'invitado') {
-  // code...
-  $rol = "OR ID_TIPO_USUARIO_USUARIO LIKE '%3%'";
-}
+// $rol = '';
+// if ($busqueda == 'administrador') {
+//   // code...
+//   $rol = "OR ID_TIPO_USUARIO_USUARIO LIKE '%1%'";
+// }else if ($busqueda == 'empleado') {
+//   // code...
+//   $rol = "OR ID_TIPO_USUARIO_USUARIO LIKE '%2%'";
+// }else if ($busqueda == 'invitado') {
+//   // code...
+//   $rol = "OR ID_TIPO_USUARIO_USUARIO LIKE '%3%'";
+// }
 
-$sql_registe = mysqli_query($conection, "SELECT COUNT(*) AS total_registro FROM usuario
-WHERE ( ID_USUARIO LIKE '%$busqueda%' OR
-  NOMBRE_USUARIO LIKE '%$busqueda%'
-  $rol) AND estatus = 1;");
+$sql_registe = mysqli_query($conection, "SELECT COUNT(*) AS total_registro FROM personal
+WHERE ( ID_PERSONAL LIKE '%$busqueda%' OR
+  NOMBRE_PERSONAL LIKE '%$busqueda%' OR
+  APELLIDOS_PERSONAL LIKE '%$busqueda%' OR
+  NUMERO_IDENTIDAD_PERSONAL LIKE '%$busqueda%' OR
+  TELEFONO_PERSONAL LIKE '%$busqueda%' OR
+  ID_USUARIO_PERSONAL LIKE '%$busqueda%') AND estatus = 1;");
 $result_register = mysqli_fetch_array($sql_registe);
 $total_registro = $result_register['total_registro'];
 
@@ -75,12 +81,15 @@ if(empty($_GET['pagina']))
 $desde = ($pagina-1) * $por_pagina;
 $total_paginas = ceil($total_registro / $por_pagina);
 
-  $query = mysqli_query($conection, "SELECT u.ID_USUARIO, u.NOMBRE_USUARIO, t.TIPO_USUARIO FROM usuario u INNER JOIN tipo_usuario t ON u.ID_TIPO_USUARIO_USUARIO = t.ID_TIPO_USUARIO
+  $query = mysqli_query($conection, "SELECT p.ID_PERSONAL, p.NOMBRE_PERSONAL, p.APELLIDOS_PERSONAL, p.NUMERO_IDENTIDAD_PERSONAL, p.TELEFONO_PERSONAL, u.NOMBRE_USUARIO FROM personal p INNER JOIN usuario u ON p.ID_USUARIO_PERSONAL = u.ID_USUARIO
     WHERE
-    ( u.ID_USUARIO LIKE '%$busqueda%' OR
-      u.NOMBRE_USUARIO LIKE '%$busqueda%' OR
-      t.TIPO_USUARIO LIKE '%$busqueda%')
-  AND estatus = 1 ORDER BY ID_USUARIO ASC LIMIT $desde,$por_pagina;");
+    ( p.ID_PERSONAL LIKE '%$busqueda%' OR
+      p.NOMBRE_PERSONAL LIKE '%$busqueda%' OR
+      p.APELLIDOS_PERSONAL LIKE '%$busqueda%' OR
+      p.NUMERO_IDENTIDAD_PERSONAL LIKE '%$busqueda%' OR
+      p.TELEFONO_PERSONAL LIKE '%$busqueda%' OR
+      u.NOMBRE_USUARIO LIKE '%$busqueda%')
+  AND p.estatus = 1 ORDER BY ID_PERSONAL ASC LIMIT $desde,$por_pagina;");
 
   $result = mysqli_num_rows($query);
   if ($result > 0) {
@@ -90,12 +99,15 @@ $total_paginas = ceil($total_registro / $por_pagina);
   ?>
 
   <tr>
-    <td><?php echo $data['ID_USUARIO']; ?></td>
+    <td><?php echo $data['ID_PERSONAL']; ?></td>
+    <td><?php echo $data['NOMBRE_PERSONAL']; ?></td>
+    <td><?php echo $data['APELLIDOS_PERSONAL']; ?></td>
+    <td><?php echo $data['NUMERO_IDENTIDAD_PERSONAL']; ?></td>
+    <td><?php echo $data['TELEFONO_PERSONAL']; ?></td>
     <td><?php echo $data['NOMBRE_USUARIO']; ?></td>
-    <td><?php echo $data['TIPO_USUARIO']; ?></td>
     <td>
-        <a class="link_edit" href="../principal/edituser.php?id=<?php echo $data['ID_USUARIO']; ?>">Editar</a>
-      <a class="link_delete" href="../principal/deluser.php?id=<?php echo $data['ID_USUARIO']; ?>">Eliminar</a>
+        <a class="link_edit" href="../process/editpersonal.php?id=<?php echo $data['ID_PERSONAL']; ?>">Editar</a>
+      <a class="link_delete" href="../process/delpersonal.php?id=<?php echo $data['ID_PERSONAL']; ?>">Eliminar</a>
     </td>
   </tr>
 

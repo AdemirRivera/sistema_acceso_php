@@ -13,7 +13,7 @@
 include '../includes/header.php';
 include '../includes/sidebar.php';
  ?>
- <form class="buscar-caja" action="search.php" method="get">
+ <form class="buscar-caja" action="../process/searchp.php" method="get">
 <input type="text" name="busqueda" id="busqueda" class="buscar-txt" placeholder="Buscar...">
 <input class="buscar-btn" type="submit" value="">
 </input>
