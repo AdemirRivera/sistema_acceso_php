@@ -51,7 +51,7 @@ if(empty($_GET['pagina']))
 $desde = ($pagina-1) * $por_pagina;
 $total_paginas = ceil($total_registro / $por_pagina);
 
-  $query = mysqli_query($conection, 'SELECT p.ID_PERSONAL, p.NOMBRE_PERSONAL, p.APELLIDOS_PERSONAL, p.NUMERO_IDENTIDAD_PERSONAL, p.TELEFONO_PERSONAL, u.NOMBRE_USUARIO FROM personal p INNER JOIN usuario u ON p.ID_USUARIO_PERSONAL = u.ID_USUARIO WHERE p.estatus = 1 ORDER BY ID_PERSONAL ASC LIMIT "$desde","$total_paginas"');
+  $query = mysqli_query($conection, "SELECT p.ID_PERSONAL, p.NOMBRE_PERSONAL, p.APELLIDOS_PERSONAL, p.NUMERO_IDENTIDAD_PERSONAL, p.TELEFONO_PERSONAL, u.NOMBRE_USUARIO FROM personal p INNER JOIN usuario u ON p.ID_USUARIO_PERSONAL = u.ID_USUARIO WHERE p.estatus = 1 ORDER BY ID_PERSONAL ASC LIMIT $desde,$por_pagina");
 
   $result = mysqli_num_rows($query);
   if ($result > 0) {
@@ -98,7 +98,7 @@ echo '<li><a href="?pagina='.$i.'">'.$i.'</a></li>';
 
 if($pagina !=$total_paginas){
  ?>
-        <li><a href="?pagina=<?php echo $pagina-1; ?>"> >> </a></li>
+        <li><a href="?pagina=<?php echo $pagina+1; ?>"> >> </a></li>
         <li><a href="?pagina=<?php echo $total_paginas; ?>"> >| </a></li>
 <?php } ?>
       </ul>

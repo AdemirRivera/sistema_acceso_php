@@ -48,7 +48,7 @@ if(empty($_GET['pagina']))
 $desde = ($pagina-1) * $por_pagina;
 $total_paginas = ceil($total_registro / $por_pagina);
 
-  $query = mysqli_query($conection, 'SELECT u.ID_USUARIO, u.NOMBRE_USUARIO, t.TIPO_USUARIO FROM usuario u INNER JOIN tipo_usuario t ON u.ID_TIPO_USUARIO_USUARIO = t.ID_TIPO_USUARIO WHERE estatus = 1 ORDER BY ID_USUARIO ASC LIMIT 0,5');
+  $query = mysqli_query($conection, "SELECT u.ID_USUARIO, u.NOMBRE_USUARIO, t.TIPO_USUARIO FROM usuario u INNER JOIN tipo_usuario t ON u.ID_TIPO_USUARIO_USUARIO = t.ID_TIPO_USUARIO WHERE estatus = 1 ORDER BY ID_USUARIO ASC LIMIT $desde,$por_pagina");
 
   $result = mysqli_num_rows($query);
   if ($result > 0) {
@@ -81,7 +81,7 @@ if($pagina != 1){
         <li><a href="?pagina=<?php echo $pagina-1; ?>"> << </a></li>
 <?php
 }
-    for ($i=1; $i <= $total_paginas; $i++) {
+    for ($i=1; $i < $total_paginas+1; $i++) {
       // code...
       if($i == $pagina){
           echo '<li class="pageSelected">'.$i.'</li>';
@@ -92,7 +92,7 @@ echo '<li><a href="?pagina='.$i.'">'.$i.'</a></li>';
 
 if($pagina !=$total_paginas){
  ?>
-        <li><a href="?pagina=<?php echo $pagina-1; ?>"> >> </a></li>
+        <li><a href="?pagina=<?php echo $pagina+1; ?>"> >> </a></li>
         <li><a href="?pagina=<?php echo $total_paginas; ?>"> >| </a></li>
 <?php } ?>
       </ul>
