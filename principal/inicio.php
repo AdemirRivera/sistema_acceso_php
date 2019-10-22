@@ -12,6 +12,11 @@ if(!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== TRUE){
 <html lang="es">
 
   <head>
+    <script>
+    function myFunction() {
+    alert("Bienvenido por primera vez");
+     }
+     </script>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -46,8 +51,22 @@ if(!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== TRUE){
      <hr>
      <h3>Ingresos del personal</h3>
    </div>
+
+   <?php
+   if (isset($_COOKIE['contador'])) {
+     // code...
+     setcookie('contador', $_COOKIE['contador']+1, time()+365*24*60*60);
+   }else {
+     // code...
+     setcookie('contador', 1, time()+365*24*60*60);
+     ?>
+
+    <?php
+   }
+    ?>
+
    <div class="appt">
-     <h1>00</h1>
+     <h1> <?php   echo $_COOKIE['contador'];?> </h1>
      <hr>
      <h3>Uso del sistema</h3>
    </div>

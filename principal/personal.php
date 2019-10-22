@@ -35,7 +35,7 @@ include '../includes/sidebar.php';
     <?php
           require_once '../php/conexion.php';
 
-$sql_registe = mysqli_query($conection, "SELECT COUNT(*) AS total_registro FROM usuario WHERE estatus = 1;");
+$sql_registe = mysqli_query($conection, "SELECT COUNT(*) AS total_registro FROM personal WHERE estatus = 1;");
 $result_register = mysqli_fetch_array($sql_registe);
 $total_registro = $result_register['total_registro'];
 
@@ -51,7 +51,7 @@ if(empty($_GET['pagina']))
 $desde = ($pagina-1) * $por_pagina;
 $total_paginas = ceil($total_registro / $por_pagina);
 
-  $query = mysqli_query($conection, 'SELECT p.ID_PERSONAL, p.NOMBRE_PERSONAL, p.APELLIDOS_PERSONAL, p.NUMERO_IDENTIDAD_PERSONAL, p.TELEFONO_PERSONAL, u.NOMBRE_USUARIO FROM personal p INNER JOIN usuario u ON p.ID_USUARIO_PERSONAL = u.ID_USUARIO WHERE p.estatus = 1 ORDER BY ID_PERSONAL ASC LIMIT 0,5');
+  $query = mysqli_query($conection, 'SELECT p.ID_PERSONAL, p.NOMBRE_PERSONAL, p.APELLIDOS_PERSONAL, p.NUMERO_IDENTIDAD_PERSONAL, p.TELEFONO_PERSONAL, u.NOMBRE_USUARIO FROM personal p INNER JOIN usuario u ON p.ID_USUARIO_PERSONAL = u.ID_USUARIO WHERE p.estatus = 1 ORDER BY ID_PERSONAL ASC LIMIT "$desde","$total_paginas"');
 
   $result = mysqli_num_rows($query);
   if ($result > 0) {

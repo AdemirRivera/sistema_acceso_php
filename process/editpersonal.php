@@ -36,15 +36,26 @@
               <label for="apellido">Apellido</label>
               <input type="text" name="apellido" id="apellido" placeholder="Apellido Completo" value="<?php echo $apellido ?>">
               <label for="ident">Numero de identidad</label>
-              <input type="text" name="ident" id="ident" placeholder="DUI, NIT, etc" >
+              <input type="text" name="ident" id="ident" placeholder="DUI, NIT, etc">
               <label for="tel">Telefono</label>
               <input type="number" name="tel" id="tel" placeholder="Telefono" value="<?php echo $tel ?>">
               <label for="rol">Usuario</label>
 
               <?php
 
-              $query_rol = mysqli_query($conection, 'SELECT * FROM usuario WHERE vacante = 0');
-              $result_rol = mysqli_num_rows($query_rol);
+              $query_user = mysqli_query($conection, 'SELECT * FROM usuario WHERE vacante = 0');
+              $test = mysqli_fetch_array($query_user);
+
+              if(empty ($test)){
+                $memo ='<p class="msg_save">No existen Usuarios Vacantes.</p><br><h1>'.$mess.'<h1>';
+             ?>
+
+             <div class="alert"><?php echo $memo ?></div>
+
+              <?php
+              }else{
+                $query_rol = mysqli_query($conection, 'SELECT * FROM usuario WHERE vacante = 0');
+                $result_rol = mysqli_num_rows($query_rol);
 
               ?>
               <select name="rol" id="rol" class="notitem">
@@ -52,11 +63,14 @@
                                           echo $option;
                   if($result_rol > 0){
                       while ($rol = mysqli_fetch_array($query_rol)){
+                        echo $option;
+
                       ?>
                   <option value="<?php echo $rol['ID_USUARIO'] ?>"><?php echo $rol['NOMBRE_USUARIO'] ?></option>
                 <?php
                       }
                   }
+                }
                   ?>
 
               </select>

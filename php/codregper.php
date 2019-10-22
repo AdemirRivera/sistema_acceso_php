@@ -27,8 +27,8 @@ if(!empty($_POST))
       $alert='<p class="msg_error">El Personal ya existe.</p>';
     }else{
 
-     $query_insert = mysqli_query($conection,"INSERT INTO personal(NOMBRE_PERSONAL, APELLIDOS_PERSONAL, NUMERO_IDENTIDAD_PERSONAL, TELEFONO_PERSONAL, ID_USUARIO_PERSONAL, estatus, vacante)
-                                                VALUES('$nombre','$apellido','$ident','$tel','$rol', 1, 1)");
+     $query_insert = mysqli_query($conection,"INSERT INTO personal(NOMBRE_PERSONAL, APELLIDOS_PERSONAL, NUMERO_IDENTIDAD_PERSONAL, TELEFONO_PERSONAL, ID_USUARIO_PERSONAL, estatus)
+                                                VALUES('$nombre','$apellido','$ident','$tel','$rol', 1)");
 
      if($query_insert ){
 
