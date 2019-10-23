@@ -56,9 +56,11 @@ if(!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== TRUE){
    if (isset($_COOKIE['contador'])) {
      // code...
      setcookie('contador', $_COOKIE['contador']+1, time()+365*24*60*60);
+     $mesage = $_COOKIE['contador'];
    }else {
      // code...
      setcookie('contador', 1, time()+365*24*60*60);
+     $mesage = 'Primer';
      ?>
 
     <?php
@@ -66,7 +68,7 @@ if(!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== TRUE){
     ?>
 
    <div class="appt">
-     <h1> <?php   echo $_COOKIE['contador'];?> </h1>
+     <h1> <?php   echo $mesage;?> </h1>
      <hr>
      <h3>Uso del sistema</h3>
    </div>

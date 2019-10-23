@@ -49,7 +49,7 @@ if(!empty($_POST))
 
 
      if($sql_update){
-
+      mysqli_query($conection, "UPDATE usuario SET vacante = 1 WHERE ID_USUARIO = '$iduser' ");
       $alert='<p class="msg_save">Actualizar Personal creado.</p>';
 
     }else{

@@ -31,7 +31,7 @@ if(!empty($_POST))
                                                 VALUES('$nombre','$apellido','$ident','$tel','$rol', 1)");
 
      if($query_insert ){
-
+       mysqli_query($conection, "UPDATE usuario SET vacante = 1 WHERE ID_USUARIO = '$iduser' ");
       $alert='<p class="msg_save">Nuevo Personal creado.</p>';
 
     }else{

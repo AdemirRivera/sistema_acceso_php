@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="css/style4.css">
+    <link rel="stylesheet" href="css/style5.css">
+    <link href="https://fonts.googleapis.com/css?family=Poppins&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <header id="main-header">
+
+        <nav>
+          <ul>
+            <li><p><?php date_default_timezone_set("America/El_Salvador");$time = time(); echo date("l d F Y (h:i A)", $time);?><p></li>
+            <li><span>|</span></li>
+            <li><span>Usuario</span></li>
+            <li><img class="logo" src="resources/icons/user.png" alt="Usuario"></li>
+            <li><a href="php/codclose.php"><img class="logo2" src="resources/icons/salir.png" alt="Salir del sistema" title="Salir"></a></li>
+          <ul>
+        </nav><!-- / nav -->
+
+      </header><!-- / #main-header -->
+      <!-- ENCABEZADO -->
+      <nav>
+      <!-- LOGO -->
+        <div class="logo">
+          <img src="resources/icons/logo1.png" alt="" class="perlo">
+          <h4 class="perlo2">SHARK</h4>
+        </div>
+       <!-- MENU -->
+        <ul class="nav-links">
+          <li><a href="inicio.php" class="cool-link">INICIO</a></li>
+          <li><a href="sistema.php" class="cool-link">SISTEMA</a></li>
+          <li><a href="acerca.php" class="cool-link">ACERCA DE</a></li>
+          <li><a href="php/codclose.php" class="cool-link">SALIR</a></li>
+        </ul>
+
+
+
+        <!-- ICONO MENU -->
+        <div class="burger">
+          <div class="line1"></div>
+          <div class="line2"></div>
+          <div class="line3"></div>
+        </div>
+
+      </nav>
+    <section id='container'>
+<center class="coax"><h1>Bienvenidos al Sistema</h1></center>
+  </section>
+  <script type="text/javascript" src="js/trast.js"></script>
+
+  </body>
+</html>
