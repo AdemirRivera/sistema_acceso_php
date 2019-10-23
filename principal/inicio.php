@@ -98,7 +98,8 @@ if(!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== TRUE){
    <h1>Tambien para dispositivos moviles</h1>
  </div>
    <div class="app">
-    <img src="../resources/images/tele.png" alt="" class="img1">
+    <img src="../resources/images/tele.jpg" alt="" class="img1">
+    <img src="../resources/images/captura2.jpg" alt="" class="img2">
     <style>
     .apt{
       background: linear-gradient(90deg, #9C5BC8, #65CCC9);
